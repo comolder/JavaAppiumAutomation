@@ -43,13 +43,12 @@ public class FirstTest {
         WebElement element_to_init_search = driver.findElementByXPath("//*[contains(@text,'Search Wikipedia')]");
         element_to_init_search.click();
 
-        WebElement element_to_enter_search_line = waitForElementPresentByXpath(
+        waitForElementAndSendKeys(
                 "//*[contains(@text,'Search…')]",
-                "Cannot find search input"
+                "Java",
+                "Cannot find search input",
+                5
         );
-
-        // работает всегда, если приложение работает
-        element_to_enter_search_line.sendKeys("Java");
         waitForElementPresentByXpath(
                 "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']",
                 "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
@@ -70,5 +69,12 @@ public class FirstTest {
     private WebElement waitForElementPresentByXpath(String xpath, String error_message)
     {
         return waitForElementPresentByXpath(xpath, error_message, 5);
+    }
+
+    private WebElement waitForElementAndSendKeys(String xpath, String value, String error_message, long timeoutInSeconds)
+    {
+        WebElement element = waitForElementPresentByXpath(xpath, error_message, timeoutInSeconds);
+        element.sendKeys(value);
+        return element;
     }
 }
