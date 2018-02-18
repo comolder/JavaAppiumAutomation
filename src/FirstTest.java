@@ -36,7 +36,12 @@ public class FirstTest {
     @Test
     public void firstTest()
     {
-        WebElement element = driver.findElementByXPath("//*[contains(@text,'Search Wikipedia')]");
-        element.click();
+        WebElement element_to_init_search = driver.findElementByXPath("//*[contains(@text,'Search Wikipedia')]");
+        element_to_init_search.click();
+
+        WebElement element_to_enter_search_line = driver.findElementByXPath("//*[contains(@text,'Search…')]");
+
+        // ломается в 50% случаев
+        element_to_enter_search_line.sendKeys();
     }
 }
