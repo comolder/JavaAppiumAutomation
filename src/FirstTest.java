@@ -40,8 +40,11 @@ public class FirstTest {
     @Test
     public void firstTest()
     {
-        WebElement element_to_init_search = driver.findElementByXPath("//*[contains(@text,'Search Wikipedia')]");
-        element_to_init_search.click();
+        waitForElementAndClick(
+                "//*[contains(@text,'Search Wikipedia')]",
+                "Cannot find 'Search Wikipedia' input.",
+                5
+        );
 
         waitForElementAndSendKeys(
                 "//*[contains(@text,'Search…')]",
@@ -75,6 +78,13 @@ public class FirstTest {
     {
         WebElement element = waitForElementPresentByXpath(xpath, error_message, timeoutInSeconds);
         element.sendKeys(value);
+        return element;
+    }
+
+    private WebElement waitForElementAndClick(String xpath, String error_message, long timeoutInSeconds)
+    {
+        WebElement element = waitForElementPresentByXpath(xpath, error_message, timeoutInSeconds);
+        element.click();
         return element;
     }
 }
