@@ -49,7 +49,12 @@ public class FirstTest {
         );
 
         // работает всегда, если приложение работает
-        element_to_enter_search_line.sendKeys();
+        element_to_enter_search_line.sendKeys("Java");
+        waitForElementPresentByXpath(
+                "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']",
+                "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
+                15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
+        );
     }
 
     private WebElement waitForElementPresentByXpath(String xpath, String error_message, long timeoutInSeconds)
