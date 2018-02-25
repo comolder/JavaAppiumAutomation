@@ -1,6 +1,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -108,8 +109,13 @@ public class FirstTest {
         );
 
         String article_title = title_element.getAttribute("text");
-        
-        System.out.println(article_title);
+
+        Assert.assertEquals(
+                "We see unexpected title!", // error message
+                "Java (programming language)", // expected value
+                article_title // actual value
+
+        );
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
