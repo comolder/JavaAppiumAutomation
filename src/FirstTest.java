@@ -118,7 +118,7 @@ public class FirstTest {
 
         );
 
-        swipeUp(2000); // looong swipe
+        swipeUpQuick();
     }
 
     @Test
@@ -151,7 +151,12 @@ public class FirstTest {
         );
         /* same as in testCompareArticleTitle - end */
 
-
+        swipeUpToFindElementByXpath(
+                By.xpath("//*[@text='View page in browser']"), // bottom
+                "Cannot find the end of the article.",
+                //1 // to fail
+                30 // to find for sure
+        );
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
@@ -199,6 +204,27 @@ public class FirstTest {
         int starty = (int) (size.height * 0.8); // get part of Y - this is start point on Y we are going to swipe from
         int endy = (int) (size.height * 0.2); // get part of Y - this is end point on Y we are going to swipe to
         driver.swipe(x, starty, x, endy, timeOfSwipe); // long swipe = slow swipe
+    }
+
+    protected void swipeUpQuick()
+    {
+        swipeUp(200);
+    }
+
+    protected void swipeUpToFindElementByXpath(By by, String error_message, int max_swipes)
+    {
+        int already_swiped = 0;
+        while (driver.findElements(by).size() == 0) { // will stop while if element found
+            ++already_swiped;
+
+            // will throw exception if element still not found after max_swipes swipes
+            if (already_swiped > max_swipes) {
+                waitForElementPresent(by, "Cannot find element by swiping up.\n" + error_message, 0);
+                return;
+            }
+            //System.out.println(already_swiped); // we could print an amount of swipes
+            swipeUpQuick(); // will swipe of element still not found
+        }
     }
     /* SWIPES */
 }

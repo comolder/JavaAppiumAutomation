@@ -17,12 +17,14 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="201" column="5" lean-forward="false" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
+            <state relative-caret-position="414">
+              <caret line="224" column="14" lean-forward="false" selection-start-line="224" selection-start-column="14" selection-end-line="224" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1324#1325#0" expanded="true" />
                 <element signature="e#1353#1354#0" expanded="true" />
+                <element signature="e#7644#7645#0" expanded="true" />
+                <element signature="e#7672#7673#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTest.testCompareArticleTitle">
+  <component name="RunManager" selected="JUnit.FirstTest.swipeArticleToTheBottom">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -185,6 +187,26 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
       <option name="METHOD_NAME" value="firstTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="FirstTest.swipeArticleToTheBottom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="JavaAppiumAutomation" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FirstTest" />
+      <option name="METHOD_NAME" value="swipeArticleToTheBottom" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -297,18 +319,20 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.firstTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.swipeArticleToTheBottom" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.firstTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.swipeArticleToTheBottom" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.firstTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest" />
       </list>
     </recent_temporary>
   </component>
@@ -329,17 +353,14 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 30m 20s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="FirstTest_swipeArticleToTheBottom - 2018.02.25 at 14h 57m 10s.xml">
+      <configuration name="FirstTest.swipeArticleToTheBottom" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 32m 45s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="FirstTest_swipeArticleToTheBottom - 2018.02.25 at 14h 58m 17s.xml">
+      <configuration name="FirstTest.swipeArticleToTheBottom" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 34m 00s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 34m 37s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="FirstTest_swipeArticleToTheBottom - 2018.02.25 at 15h 00m 51s.xml">
+      <configuration name="FirstTest.swipeArticleToTheBottom" configurationId="JUnit" />
     </history-entry>
     <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 38m 17s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
@@ -359,6 +380,9 @@
     <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 50m 07s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 51m 02s.xml">
+      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -372,7 +396,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32809225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32809225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -416,7 +440,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -429,6 +453,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#7644#7645#0" expanded="true" />
+            <element signature="e#7672#7673#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -441,6 +467,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#7644#7645#0" expanded="true" />
+            <element signature="e#7672#7673#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -453,6 +481,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#7644#7645#0" expanded="true" />
+            <element signature="e#7672#7673#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -483,12 +513,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="201" column="5" lean-forward="false" selection-start-line="201" selection-start-column="5" selection-end-line="201" selection-end-column="5" />
+        <state relative-caret-position="414">
+          <caret line="224" column="14" lean-forward="false" selection-start-line="224" selection-start-column="14" selection-end-line="224" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#7644#7645#0" expanded="true" />
+            <element signature="e#7672#7673#0" expanded="true" />
           </folding>
         </state>
       </provider>
