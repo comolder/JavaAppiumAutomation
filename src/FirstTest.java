@@ -45,7 +45,6 @@ public class FirstTest {
                 "Cannot find 'Search Wikipedia' input.",
                 5
         );
-
         waitForElementAndSendKeys(
                 By.xpath("//*[contains(@text,'Search…')]"),
                 "Java",
@@ -77,6 +76,40 @@ public class FirstTest {
                 "X still present, cannot cancel search.",
                 1
         );
+    }
+
+    @Test
+    public void testCompareArticleTitle()
+    {
+        /* same as in firstTest - start */
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input.",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+        /* same as in firstTest - end */
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
+                15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
+        );
+
+        WebElement title_element = waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title.",
+                15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
+        );
+
+        String article_title = title_element.getAttribute("text");
+        
+        System.out.println(article_title);
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
