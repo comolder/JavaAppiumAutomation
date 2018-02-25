@@ -22,11 +22,11 @@ public class FirstTest {
 
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
-        capabilities.setCapability("platformVersion","8.0");
+        capabilities.setCapability("platformVersion","8.1");
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","org.wikipedia");
         capabilities.setCapability("appActivity",".main.MainActivity");
-        capabilities.setCapability("app","/Users/abatyrov/Documents/JavaAutomation/org.wikipedia.apk");
+        capabilities.setCapability("app","/Users/vitalijkotov/JavaAppiumAutomation/apks/org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
@@ -40,50 +40,49 @@ public class FirstTest {
     @Test
     public void firstTest()
     {
-        waitForElementByXpathAndClick(
-                "//*[contains(@text,'Search Wikipedia')]",
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
                 "Cannot find 'Search Wikipedia' input.",
                 5
         );
 
-        waitForElementByXpathAndSendKeys(
-                "//*[contains(@text,'Search…')]",
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
                 "Java",
                 "Cannot find search input",
                 5
         );
-        waitForElementPresentByXpath(
-                "//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']",
+        waitForElementPresent(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
                 "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
                 15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
         );
     }
 
-    private WebElement waitForElementPresentByXpath(String xpath, String error_message, long timeoutInSeconds)
+    private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
-        By by = By.xpath(xpath);
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(by)
         );
     }
 
-    private WebElement waitForElementPresentByXpath(String xpath, String error_message)
+    private WebElement waitForElementPresent(By by, String error_message)
     {
-        return waitForElementPresentByXpath(xpath, error_message, 5);
+        return waitForElementPresent(by, error_message, 5);
     }
 
-    private WebElement waitForElementByXpathAndSendKeys(String xpath, String value, String error_message, long timeoutInSeconds)
+    private WebElement waitForElementAndSendKeys(By by, String value, String error_message, long timeoutInSeconds)
     {
-        WebElement element = waitForElementPresentByXpath(xpath, error_message, timeoutInSeconds);
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.sendKeys(value);
         return element;
     }
 
-    private WebElement waitForElementByXpathAndClick(String xpath, String error_message, long timeoutInSeconds)
+    private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds)
     {
-        WebElement element = waitForElementPresentByXpath(xpath, error_message, timeoutInSeconds);
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.click();
         return element;
     }
