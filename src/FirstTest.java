@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -116,6 +117,41 @@ public class FirstTest {
                 article_title // actual value
 
         );
+
+        swipeUp(2000); // looong swipe
+    }
+
+    @Test
+    public void swipeArticleToTheBottom()
+    {
+        /* same as in testCompareArticleTitle - start */
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input.",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
+                15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
+        );
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title.",
+                15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
+        );
+        /* same as in testCompareArticleTitle - end */
+
+
     }
 
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
@@ -154,4 +190,15 @@ public class FirstTest {
         element.click();
         return element;
     }
+
+    /* SWIPES */
+    protected void swipeUp(int timeOfSwipe)
+    {
+        Dimension size = driver.manage().window().getSize(); // get Size of our screen
+        int x = (int) (size.width / 2); // get half of X - this is line on X we are going to swipe on
+        int starty = (int) (size.height * 0.8); // get part of Y - this is start point on Y we are going to swipe from
+        int endy = (int) (size.height * 0.2); // get part of Y - this is end point on Y we are going to swipe to
+        driver.swipe(x, starty, x, endy, timeOfSwipe); // long swipe = slow swipe
+    }
+    /* SWIPES */
 }
