@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62f35eae-cd5c-41d6-9666-0156fdc7b81a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/FirstTest.java" afterPath="$PROJECT_DIR$/src/FirstTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,14 +18,14 @@
       <file leaf-file-name="FirstTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="224" column="14" lean-forward="false" selection-start-line="224" selection-start-column="14" selection-end-line="224" selection-end-column="14" />
+            <state relative-caret-position="432">
+              <caret line="344" column="5" lean-forward="true" selection-start-line="330" selection-start-column="0" selection-end-line="344" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1324#1325#0" expanded="true" />
                 <element signature="e#1353#1354#0" expanded="true" />
-                <element signature="e#7644#7645#0" expanded="true" />
-                <element signature="e#7672#7673#0" expanded="true" />
+                <element signature="e#11461#11462#0" expanded="true" />
+                <element signature="e#11489#11490#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,7 +138,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTest.swipeArticleToTheBottom">
+  <component name="RunManager" selected="JUnit.FirstTest.saveFirstArticleToMyList">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -159,15 +160,15 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="FirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstTest.firstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="JavaAppiumAutomation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="firstTest" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -179,14 +180,14 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="FirstTest.firstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FirstTest.saveFirstArticleToMyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="JavaAppiumAutomation" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="FirstTest" />
-      <option name="METHOD_NAME" value="firstTest" />
+      <option name="METHOD_NAME" value="saveFirstArticleToMyList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -320,19 +321,19 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.firstTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.swipeArticleToTheBottom" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.firstTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.swipeArticleToTheBottom" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.swipeArticleToTheBottom" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.firstTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FirstTest.saveFirstArticleToMyList" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.FirstTest.swipeArticleToTheBottom" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FirstTest.testCancelSearch" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FirstTest.firstTest" />
       </list>
     </recent_temporary>
   </component>
@@ -353,20 +354,20 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest_swipeArticleToTheBottom - 2018.02.25 at 14h 57m 10s.xml">
-      <configuration name="FirstTest.swipeArticleToTheBottom" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.02.26 at 23h 17m 35s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_swipeArticleToTheBottom - 2018.02.25 at 14h 58m 17s.xml">
-      <configuration name="FirstTest.swipeArticleToTheBottom" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.02.26 at 23h 18m 52s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_swipeArticleToTheBottom - 2018.02.25 at 15h 00m 51s.xml">
-      <configuration name="FirstTest.swipeArticleToTheBottom" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.02.26 at 23h 20m 42s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 38m 17s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.02.26 at 23h 35m 54s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 39m 12s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="FirstTest_saveFirstArticleToMyList - 2018.02.26 at 23h 39m 42s.xml">
+      <configuration name="FirstTest.saveFirstArticleToMyList" configurationId="JUnit" />
     </history-entry>
     <history-entry file="FirstTest_testCompareArticleTitle - 2018.02.25 at 14h 43m 05s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
@@ -422,6 +423,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -453,8 +455,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#7644#7645#0" expanded="true" />
-            <element signature="e#7672#7673#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -467,8 +469,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#7644#7645#0" expanded="true" />
-            <element signature="e#7672#7673#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -481,8 +483,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#7644#7645#0" expanded="true" />
-            <element signature="e#7672#7673#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -513,14 +515,150 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="224" column="14" lean-forward="false" selection-start-line="224" selection-start-column="14" selection-end-line="224" selection-end-column="14" />
+        <state relative-caret-position="-251">
+          <caret line="83" column="39" lean-forward="false" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1324#1325#0" expanded="true" />
             <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#7644#7645#0" expanded="true" />
-            <element signature="e#7672#7673#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="92" column="4" lean-forward="false" selection-start-line="92" selection-start-column="4" selection-end-line="121" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/selenium-server-standalone-3.4.0.jar!/org/openqa/selenium/support/ui/FluentWait.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="81" column="17" lean-forward="false" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/selenium-server-standalone-3.4.0.jar!/org/openqa/selenium/support/ui/ExpectedConditions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="356" column="45" lean-forward="false" selection-start-line="356" selection-start-column="45" selection-end-line="356" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/junit-4.12.jar!/org/junit/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FirstTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="344" column="5" lean-forward="true" selection-start-line="330" selection-start-column="0" selection-end-line="344" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1353#1354#0" expanded="true" />
+            <element signature="e#11461#11462#0" expanded="true" />
+            <element signature="e#11489#11490#0" expanded="true" />
           </folding>
         </state>
       </provider>

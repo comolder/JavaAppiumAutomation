@@ -151,11 +151,105 @@ public class FirstTest {
         );
         /* same as in testCompareArticleTitle - end */
 
-        swipeUpToFindElementByXpath(
+        swipeUpToFindElement(
                 By.xpath("//*[@text='View page in browser']"), // bottom
                 "Cannot find the end of the article.",
                 //1 // to fail
                 30 // to find for sure
+        );
+    }
+
+    @Test
+    public void saveFirstArticleToMyList()
+    {
+        /* same as in testCompareArticleTitle - start */
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input.",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                "Java",
+                "Cannot find search input",
+                5
+        );
+
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot find 'Object-oriented programming language' topic searching by 'Java'",
+                15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
+        );
+
+        waitForElementPresent(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find article title.",
+                15 // более длинный таймаут, так как это ожидание взаимодействия с сервером
+        );
+        /* same as in testCompareArticleTitle - end */
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find button to open article options",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[@text='Add to reading list']"),
+                "Cannot find option to add article to reading list",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[@text='GOT IT']"),
+                "Cannot find 'Got It' tip overlay",
+                5
+        );
+
+        // if we've already found element, there is no need to find it in second time
+        WebElement input_element = waitForElementAndClear(
+                By.id("org.wikipedia:id/text_input"),
+                "Cannot find input to set name of articles folder",
+                5
+        );
+        String name_of_folder = "Learning programing"; // to check it in future folder
+        input_element.sendKeys(name_of_folder);
+
+        // sometimes when an element clearly already exist, we could use simple click instead of waiting
+        driver.findElementByXPath("//*[@text='OK']").click();
+
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageButton[@content-desc='Navigate up']"),
+                "Cannot close article, cannot find X link.",
+                5
+        );
+
+        // now we check saved article
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[@content-desc='My lists']"),
+                "Cannot find navigation button to My List",
+                5
+        );
+
+        // xpath depends on text we set previously
+        // we need to click on one level up, so we've added /..
+        String xpath_to_new_folder = "//*[@text='" + name_of_folder + "']/..";
+        waitForElementAndClick(
+                By.xpath(xpath_to_new_folder),
+                "Cannot find created folder",
+                5
+        );
+
+        // this action will delete an article
+        swipeOnElementToLeft(
+                By.xpath("//*[@text='Java (programming language)']"),
+                "Cannot find saved article"
+        );
+
+        // make sure an article've been deleted
+        waitForElementNotPresent(
+                By.xpath("//*[@text='Java (programming language)']"),
+                "Cannot delete saved article.",
+                10
         );
     }
 
@@ -189,6 +283,13 @@ public class FirstTest {
         return element;
     }
 
+    private WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds)
+    {
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
+        element.clear();
+        return element;
+    }
+
     private WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds)
     {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
@@ -211,7 +312,7 @@ public class FirstTest {
         swipeUp(200);
     }
 
-    protected void swipeUpToFindElementByXpath(By by, String error_message, int max_swipes)
+    protected void swipeUpToFindElement(By by, String error_message, int max_swipes)
     {
         int already_swiped = 0;
         while (driver.findElements(by).size() == 0) { // will stop while if element found
@@ -225,6 +326,22 @@ public class FirstTest {
             //System.out.println(already_swiped); // we could print an amount of swipes
             swipeUpQuick(); // will swipe of element still not found
         }
+    }
+
+    protected void swipeOnElementToLeft(By by, String error_message)
+    {
+        WebElement element = waitForElementPresent(
+                By.xpath("//*[@text='Java (programming language)']"),
+                "Cannot find saved article",
+                10
+        );
+        int left_X = element.getLocation().getX();
+        int right_X = left_X + element.getSize().getWidth();
+        int upper_Y = element.getLocation().getY();
+        int lower_Y = upper_Y + element.getSize().getHeight();
+        int middle_Y = (upper_Y + lower_Y) / 2;
+
+        driver.swipe(right_X, middle_Y, left_X, middle_Y, 200); // long swipe = slow swipe
     }
     /* SWIPES */
 }
