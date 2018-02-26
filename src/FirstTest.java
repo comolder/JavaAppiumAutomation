@@ -7,11 +7,13 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
+import io.appium.java_client.TouchAction;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
+import java.time.Duration;
 
 public class FirstTest {
 
@@ -117,8 +119,6 @@ public class FirstTest {
                 article_title // actual value
 
         );
-
-        swipeUpQuick();
     }
 
     @Test
@@ -241,7 +241,7 @@ public class FirstTest {
 
         // this action will delete an article
         swipeOnElementToLeft(
-                By.xpath("//*[@text='Java (programming language)']"),
+                By.xpath("//*[@text='Java (programming language)']/.."),
                 "Cannot find saved article"
         );
 
@@ -304,7 +304,13 @@ public class FirstTest {
         int x = (int) (size.width / 2); // get half of X - this is line on X we are going to swipe on
         int starty = (int) (size.height * 0.8); // get part of Y - this is start point on Y we are going to swipe from
         int endy = (int) (size.height * 0.2); // get part of Y - this is end point on Y we are going to swipe to
-        driver.swipe(x, starty, x, endy, timeOfSwipe); // long swipe = slow swipe
+
+        TouchAction action = new TouchAction(driver);
+        action.press(x, starty);
+        action.waitAction(Duration.ofMillis(timeOfSwipe));
+        action.moveTo(x, endy);
+        action.release();
+        action.perform();
     }
 
     protected void swipeUpQuick()
@@ -330,18 +336,21 @@ public class FirstTest {
 
     protected void swipeOnElementToLeft(By by, String error_message)
     {
-        WebElement element = waitForElementPresent(
-                By.xpath("//*[@text='Java (programming language)']"),
-                "Cannot find saved article",
-                10
-        );
+        WebElement element = waitForElementPresent(by, error_message, 10);
+
         int left_X = element.getLocation().getX();
         int right_X = left_X + element.getSize().getWidth();
         int upper_Y = element.getLocation().getY();
         int lower_Y = upper_Y + element.getSize().getHeight();
         int middle_Y = (upper_Y + lower_Y) / 2;
 
-        driver.swipe(right_X, middle_Y, left_X, middle_Y, 200); // long swipe = slow swipe
+        TouchAction action = new TouchAction(driver);
+        action
+                .press(right_X, middle_Y)
+                .waitAction(Duration.ofMillis(150))
+                .moveTo(left_X, middle_Y)
+                .release()
+                .perform();
     }
     /* SWIPES */
 }
