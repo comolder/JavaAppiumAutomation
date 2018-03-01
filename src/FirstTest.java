@@ -308,6 +308,65 @@ public class FirstTest {
         );*/
     }
 
+    /**
+     * We need this one and testAmountOfNotEmptySearch to show how "find elements" method works
+     * Also we'll use assertGreaterThen and assertLessThen functions
+     * Also we'll refactor this two tests in one with dataProvider
+     */
+    @Test
+    public void testAmountOfEmptySearch()
+    {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input.",
+                5
+        );
+
+        String search_line = "Labudabudayda"; // we need it to reuse now and to make it a dataProvider param in future
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                search_line,
+                "Cannot find search input",
+                5
+        );
+
+        String search_result_locator = "//*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']";
+        String empty_result_label = "//*[@text='No results found']";
+
+        // make sure we found nothing
+        waitForElementPresent(
+                By.xpath(empty_result_label),
+                "Cannot find anything by the request " + search_line,
+                15
+        );
+        assertElementNotPresent(
+                By.xpath(search_result_locator),
+                "We supposed to not found any results by request " + search_line
+        );
+
+        // check amount of elements
+        int amount_of_search_results = getAmountOfElements(
+                By.xpath(search_result_locator)
+        );
+
+        /*
+         * Это аналог assertLessThan
+         * Я считаю, это надо показать в курсе и рассказать об этом.
+         * Но смотри сам - ниже есть просто assertTrue.
+         * */
+        Assert.assertThat(
+                "We found too many results!",
+                amount_of_search_results,
+                //Matchers.lessThan(-1) // to fail
+                Matchers.lessThan(1) // to pass
+        );
+
+        /*Assert.assertTrue(
+                "We found too many results!",
+                amount_of_search_results < 1
+        );*/
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -315,6 +374,15 @@ public class FirstTest {
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(by)
         );
+    }
+
+    private void assertElementNotPresent(By by, String error_message)
+    {
+        int amount_of_elements = getAmountOfElements(by);
+        if (amount_of_elements > 0) {
+            String default_message = "An element '" + by.toString() + "' supposed to not be present.";
+            throw new AssertionError(default_message + " " + error_message);
+        }
     }
 
     private boolean waitForElementNotPresent(By by, String error_message, long timeoutInSeconds)
