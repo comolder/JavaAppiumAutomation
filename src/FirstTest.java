@@ -1,5 +1,6 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.hamcrest.Matchers;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URL;
 import java.time.Duration;
+import java.util.List;
 
 public class FirstTest {
 
@@ -253,6 +255,59 @@ public class FirstTest {
         );
     }
 
+    /**
+     * We need this one and testAmountOfEmptySearch to show how "find elements" method works
+     * Also we'll use assertGreaterThen and assertLessThen functions
+     * Also we'll refactor this two tests in one with dataProvider
+     */
+    @Test
+    public void testAmountOfNotEmptySearch()
+    {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text,'Search Wikipedia')]"),
+                "Cannot find 'Search Wikipedia' input.",
+                5
+        );
+
+        String search_line = "Linkin Park Diskography"; // we need it to reuse now and to make it a dataProvider param in future
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text,'Search…')]"),
+                search_line,
+                "Cannot find search input",
+                5
+        );
+
+        String search_result_locator = "//*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']";
+        waitForElementPresent(
+                By.xpath(search_result_locator),
+                "Cannot find anything by the request " + search_line,
+                15
+        );
+
+        int amount_of_search_results = getAmountOfElements(
+                By.xpath(search_result_locator)
+        );
+
+
+        /*
+        * А вот нам и понадобился hamcrest-либа
+        * Знакомься, это аналог assertGreaterThan :)
+        * Я считаю, это надо показать в курсе и рассказать об этом.
+        * Но смотри сам - ниже есть просто assertTrue.
+        * */
+        Assert.assertThat(
+                "We found too few results!",
+                amount_of_search_results,
+                //Matchers.greaterThan(50) // to fail
+                Matchers.greaterThan(0) // to pass
+        );
+
+        /*Assert.assertTrue(
+                "We found too few results!",
+                amount_of_search_results > 0
+        );*/
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -295,6 +350,12 @@ public class FirstTest {
         WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.click();
         return element;
+    }
+
+    private int getAmountOfElements(By by)
+    {
+        List elements = driver.findElements(by);
+        return elements.size();
     }
 
     /* SWIPES */
