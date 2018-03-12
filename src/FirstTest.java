@@ -473,6 +473,54 @@ public class FirstTest {
         );
     }
 
+    /**
+     * Это тест с плохой активити, он падает
+     */
+    @Test
+    public void testSettingsInBackground()
+    {
+        String open_menu_button = "org.wikipedia:id/menu_overflow_button";
+        String open_settings_link = "org.wikipedia:id/explore_overflow_settings";
+        String show_image_checker_xpath = "//*[@text='Show images']/../../*[@resource-id='android:id/widget_frame']/*[@resource-id='org.wikipedia:id/switchWidget']";
+
+        // go to the settings
+        waitForElementAndClick(
+                By.id(open_menu_button),
+                "Cannot wait for settings button",
+                10
+        );
+        waitForElementAndClick(
+                By.id(open_settings_link),
+                "Cannot find lint to settings page",
+                5
+        );
+
+        unselectSwitcherIfSelect(
+                By.xpath(show_image_checker_xpath),
+                "Cannot find switcher for 'Show images' setting"
+        );
+
+        sendAppToBackgroundAndBack(2);
+
+        // go to the settings (yeah, once again)
+        waitForElementAndClick(
+                By.id(open_menu_button),
+                "Cannot wait for settings button",
+                10
+        );
+        waitForElementAndClick(
+                By.id(open_settings_link),
+                "Cannot find lint to settings page",
+                5
+        );
+
+        // сломается, потому что сосотояние не сохранилось, потому что аппа вернулась из catch
+        selectSwitcherIfUnselect(
+                By.xpath(show_image_checker_xpath),
+                "Cannot find switcher for 'Show images' setting"
+        );
+    }
+
     private WebElement waitForElementPresent(By by, String error_message, long timeoutInSeconds)
     {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
@@ -536,6 +584,43 @@ public class FirstTest {
     {
         List elements = driver.findElements(by);
         return elements.size();
+    }
+
+    private WebElement selectSwitcherIfUnselect(By by, String error_message)
+    {
+        WebElement element = waitForElementPresent(by, error_message);
+        if (isElementChecked(by)) {
+            throw new AssertionError("Element have already been selected.");
+        }
+
+        element.click();
+        return element;
+    }
+
+    private WebElement unselectSwitcherIfSelect(By by, String error_message)
+    {
+        WebElement element = waitForElementPresent(by, error_message);
+        if (!isElementChecked(by)) {
+            throw new AssertionError("Element is unselected.");
+        }
+
+        element.click();
+        return element;
+    }
+
+    private boolean isElementChecked(By by)
+    {
+        String checked_attr = driver.findElement(by).getAttribute("checked");
+        return checked_attr.equals("true");
+    }
+
+    private void sendAppToBackgroundAndBack(int seconds)
+    {
+        try {
+            driver.runAppInBackground(Duration.ofSeconds(seconds));
+        } catch (Exception e) {
+            driver.launchApp();
+        }
     }
 
     /* SWIPES */
